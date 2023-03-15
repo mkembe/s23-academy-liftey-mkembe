@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct ExerciseRowItemView: View {
+    
+    let exercise: Exercise
+    
     var body: some View {
-        Text("Exercise!")
+        VStack(alignment: .leading) {
+            Text("\(exercise.name)")
+                .fontWeight(.bold)
+            Text("\(exercise.sets) x \(exercise.reps) x \(exercise.weight) lbs")
+        }
     }
 }
 
 struct ExerciseRowItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseRowItemView()
+        ExerciseRowItemView(exercise: .example)
     }
 }
